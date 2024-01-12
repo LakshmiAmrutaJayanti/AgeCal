@@ -1,0 +1,36 @@
+.D, .M, .Y ,.res,h1,p,.em,.but {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25cm;
+    margin: 0.1cm 0.1cm 0.2cm 0.2cm;
+   
+}
+input
+{
+    border: 2px solid rgba(0, 0, 0, 0.556);
+    height: 5vh;
+}
+.res
+{
+    padding: 1px;
+}
+.m ,.d ,.y 
+{
+    padding-left: 1cm;
+    align-items: center;
+    font-size: larger;
+    color: brown;
+}
+h1
+{
+    color: black;
+}
+p
+{
+    color: gray;
+}
+body
+{
+   background-color: antiquewhite;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="in.css">
+  <title>Frontend Mentor | Age calculator app</title>
+  <script>
+    function Cal() {
+      const day = parseInt(document.getElementById("dayInput").value);
+      const month = parseInt(document.getElementById("monthInput").value);
+      const year = parseInt(document.getElementById("yearInput").value);
+
+      // Validate input
+      if (isNaN(day) || isNaN(month) || isNaN(year)) {
+        alert("Please enter valid numeric values for day, month, and year.");
+        return;
+      }
+
+      // Create a Date object with the user's input
+      const birthdate = new Date(year, month - 1, day);
+
+      // Get the current date
+      const currentDate = new Date();
+      const diff = currentDate - birthdate;
+      const age = Math.floor(diff / (365.25 * 24 * 60 * 60 * 1000));
+
+      alert(`You are ${age} years old!`);
+    }
+  </script>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <h1>Age calculator</h1>
+  <p>We calculate your age</p>
+  <div class="D">
+    <input type="number" id="dayInput" placeholder="Enter your day..." required>
+  </div>
+  <div class="M">
+    <input type="text" id="monthInput" pattern="^(0?[1-9]|1[0-2])$" placeholder="Enter your month..." required>
+  </div>
+  <div class="Y">
+    <input type="number" id="yearInput" placeholder="Enter year..." required>
+  </div>
+  <div class="but">
+    <button type="submit" onclick="Cal()">Click!!</button>
+  </div>
+  <div class="em">&#x1F60A;</div>
+</body>
+</html>
